@@ -22,12 +22,6 @@ jobs:
       - name: Setup dependencies
         run: npm ci
 
-      - name: Debug Info
-        run: |
-          echo "Current branch: ${{ github.ref }}"
-          echo "Event name: ${{ github.event_name }}"
-          aws sts get-caller-identity
-
       - name: Assume Role
         uses: aws-actions/configure-aws-credentials@v2
         with:
